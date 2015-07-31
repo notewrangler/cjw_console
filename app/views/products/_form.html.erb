@@ -1,0 +1,47 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    		 <div class="form-field fatbottom">
+	       	 <span class='small material-icons prefix'>create</span><%= f.label :title %><br>
+	      	 <%= f.text_field :title, class: 'form-control', placeholder: "What's this thing?" %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='small material-icons prefix'>description</i><%= f.label :description %><br>
+	        <%= f.text_area :description, class: 'form-control', style: "min-height: 130px", placeholder: "Tell us something about it..."%>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='small material-icons prefix'>today</i><%= f.label :purchase_date %><br>
+	        <%= f.date_field :purchase_date, class: 'form-control' %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class="small material-icons prefix">store</i><%= f.label :purchase_source %><br>
+	        <%= f.text_field :purchase_source, class: 'form-control', placeholder: "Where'd you get it?" %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='small material-icons prefix'>attach_money</i><%= f.label :purchase_price %><br>
+	        <%= f.text_field :purchase_price, class: 'form-control', placeholder: "0.00"%>
+	      </div>
+	      <div class="form-field fatbottom">
+	         <i class='small material-icons prefix'>folder_open</i>
+	         <%= f.label :store_category, 'Store Category' %><br>           
+	         <%= f.select(:store_category, options_for_select(store_categories, @product.store_category), {}, {class: 'form-control', placeholder: "Select a Category"}) %>          
+	      </div><br>
+	      <div class="actions">
+	          <%= f.submit "Create Product", class: "btn btn-success"  %>
+	      </div><br><br>	    
+<% end %>
+
+<script type="text/javascript">
+  // $('select').selectpicker();
+
+</script>

@@ -1,0 +1,21 @@
+<div class="container">
+
+	<div class"row">
+		<div class="col-md-2">
+				<h3><%= @parent_category.main_category + " > " %></h3>
+		</div>
+	</div>	
+
+		<div class"row">
+			<div class="col-md-3" >
+				<% @sub_categories.each do |s| %>
+					<% if s.children == 0 && s.sub_category1 != "" %>
+						<h5><%= link_to s.sub_category1, last_category_path(s) %></h5> 
+					<% elsif s.sub_category1 != "" %>
+						<h5><%= link_to s.sub_category1 + " > ", sub_2_category_path(s) %></h5>
+					<% end %>
+				<% end %>	
+			</div>
+		</div>
+
+</div>
