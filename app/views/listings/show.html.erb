@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @listing.product_id %>
+</p>
+
+<p>
+  <strong>Ebay category:</strong>
+  <%= @listing.ebay_category %>
+</p>
+
+<p>
+  <strong>Upc:</strong>
+  <%= @listing.upc %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @listing.condition %>
+</p>
+
+<p>
+  <strong>Listing format:</strong>
+  <%= @listing.listing_format %>
+</p>
+
+<p>
+  <strong>Asking price:</strong>
+  <%= @listing.asking_price %>
+</p>
+
+<p>
+  <strong>Listing duration:</strong>
+  <%= @listing.listing_duration %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @listing.string %>
+</p>
+
+<p>
+  <strong>Item location:</strong>
+  <%= @listing.item_location %>
+</p>
+
+<p>
+  <strong>Payment policy:</strong>
+  <%= @listing.payment_policy %>
+</p>
+
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
+  resources :listings do 
+    member do
+      get 'intake', to: 'listings#intake', as: :intake      
+      get 'specifics', to: 'listings#specifics', as: :specifics
+     
+    end
+  end
   resources :products
 
   resources :categories do
     member do 
-      get "sub_1", to: "categories#sub_1", as: :sub_1
-      get "sub_2", to: "categories#sub_2", as: :sub_2
-      get "sub_3", to: "categories#sub_3", as: :sub_3
-      get "sub_4", to: "categories#sub_4", as: :sub_4
-      get "sub_5", to: "categories#sub_5", as: :sub_5
-      get "last",  to: "categories#last",  as: :last
+      get 'sub_1', to: 'categories#sub_1', as: :sub_1
+      get 'sub_2', to: 'categories#sub_2', as: :sub_2
+      get 'sub_3', to: 'categories#sub_3', as: :sub_3
+      get 'sub_4', to: 'categories#sub_4', as: :sub_4
+      get 'sub_5', to: 'categories#sub_5', as: :sub_5
+      get 'last',  to: 'categories#last',  as: :last
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

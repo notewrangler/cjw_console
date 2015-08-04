@@ -37,6 +37,8 @@ gem 'font-awesome-sass'
 
 gem 'paperclip'
 
+gem 'workflow'
+
 
 
 # Use ActiveModel has_secure_password

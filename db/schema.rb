@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731035242) do
+ActiveRecord::Schema.define(version: 20150803003513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "ebay_categories", force: :cascade do |t|
     t.integer  "category_id"
@@ -32,6 +33,25 @@ ActiveRecord::Schema.define(version: 20150731035242) do
 
   add_index "ebay_categories", ["category_id"], name: "index_ebay_categories_on_category_id", using: :btree
 
+  create_table "listings", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "ebay_category"
+    t.string   "upc"
+    t.string   "condition"
+    t.hstore   "item_specifics"
+    t.string   "listing_format"
+    t.decimal  "asking_price",     precision: 6, scale: 2
+    t.string   "listing_duration"
+    t.string   "item_location"
+    t.string   "payment_policy"
+    t.hstore   "shipping_details"
+    t.hstore   "package_details"
+    t.hstore   "return_policy"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.integer  "quantity"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -41,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150731035242) do
     t.string   "store_category"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
+    t.string   "state"
   end
 
 end
