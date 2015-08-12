@@ -33,7 +33,7 @@
 		<div class"row">
 			<div class="col-md-3" >
 				<% @sub_categories.each do |s| %>
-					<h5><%= link_to s.sub_category5, last_category_path %></h5> 
+					<h5><%= link_to s.sub_category5, last_path(s, @product) %></h5> 
 				<% end %>	
 			</div>
 		</div>

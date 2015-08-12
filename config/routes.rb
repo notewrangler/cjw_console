@@ -1,22 +1,32 @@
 Rails.application.routes.draw do
-  resources :listings do 
-    member do
-      get 'intake', to: 'listings#intake', as: :intake      
-      get 'specifics', to: 'listings#specifics', as: :specifics
-     
-    end
-  end
-  resources :products
 
-  resources :categories do
-    member do 
-      get 'sub_1', to: 'categories#sub_1', as: :sub_1
-      get 'sub_2', to: 'categories#sub_2', as: :sub_2
-      get 'sub_3', to: 'categories#sub_3', as: :sub_3
-      get 'sub_4', to: 'categories#sub_4', as: :sub_4
-      get 'sub_5', to: 'categories#sub_5', as: :sub_5
-      get 'last',  to: 'categories#last',  as: :last
-    end
+  
+
+    # get 'categories/:product_id', to: 'categories#index', as: 'categories'    
+    # get 'sub_1/:id', to: 'categories#sub_1', as: :sub_1
+    # get 'sub_2/:id',  to: 'categories#sub_2', as: :sub_2
+    # get 'sub_3/:id', to: 'categories#sub_3', as: :sub_3
+    # get 'sub_4/:id', to: 'categories#sub_4', as: :sub_4
+    # get 'sub_5/:id', to: 'categories#sub_5', as: :sub_5
+    # get 'last/:id',  to: 'categories#last',  as: :last
+ 
+  get 'main/:product_id/', to: 'categories#main', as: :main
+  get 'sub_1/:id/:product_id', to: 'categories#sub_1', as: :sub_1
+  get 'sub_2/:id/:product_id', to: 'categories#sub_2', as: :sub_2
+  get 'sub_3/:id/:product_id', to: 'categories#sub_3', as: :sub_3
+  get 'sub_4/:id/:product_id', to: 'categories#sub_4', as: :sub_4
+  get 'sub_5/:id/:product_id', to: 'categories#sub_5', as: :sub_5
+  get 'last/:id/:product_id',  to: 'categories#last',  as: :last
+  put 'assign_ebay_category/:id/:product_id', to: 'categories#assign_ebay_category', as: :assign_ebay_category
+           
+
+  
+
+  resources :products do 
+    member do
+      get 'listing_specifics', to: 'products#listing_specifics', as: :listing_specifics
+    end 
+        
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

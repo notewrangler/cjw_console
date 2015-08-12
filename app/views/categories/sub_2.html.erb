@@ -16,9 +16,9 @@
 			<div class="col-md-3" >
 				<% @sub_categories.each do |s| %>
 					<% if s.children == 0 %>
-						<h5><%= link_to s.sub_category2, last_category_path(s) %></h5> 
+						<h5><%= link_to s.sub_category2, last_path(s, @product) %></h5> 
 					<% else %>
-						<h5><%= link_to s.sub_category2 + " > ", sub_3_category_path(s) %></h5>
+						<h5><%= link_to s.sub_category2 + " > ", sub_3_path(s, @product) %></h5>
 					<% end %>
 				<% end %>	
 			</div>

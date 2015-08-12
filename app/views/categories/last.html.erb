@@ -7,10 +7,18 @@
 			@parent_category.f3 + @parent_category.f4 + @parent_category.f5 %></h3>
 		</div>
 	</div>
-   <% form_for(@listing) do |f| %>
 
-
+	<div class="button-breathe">
+		<%= form_tag assign_ebay_category_path, method: :put do %>		
+   		
+   		<%= submit_tag "Select as eBay Category", class: "btn btn-success" %>
    <% end %>
+	</div>
+
+	<div class="button-breathe">
+		<%= link_to "Back to Top of Categories", main_path(@product), class: "btn btn-info" %>
+	</div>
+   
 	
 
 </div>	

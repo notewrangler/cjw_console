@@ -2,8 +2,7 @@ class Product < ActiveRecord::Base
 
 	include ProductsHelper
 	include Workflow
-
-	has_one :listing
+	
 
 	workflow do 
 		state :new do 

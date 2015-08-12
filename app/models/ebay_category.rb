@@ -1,6 +1,6 @@
 class EbayCategory < ActiveRecord::Base
 
-	
+	scope :top_level, -> { where('category_id = parent_id').order(:id) }
 
 
 	def f1

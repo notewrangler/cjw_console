@@ -14,17 +14,16 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    @product = Product.find(params[:id])
-    @listing = Listing.new   
+    @product_listing = Listing.new
+    @product_ = Product.find(params[:product_id])  
+    gon.categories = EbayCategory.all
+    gon.top_level = EbayCategory.top_level
   end
 
-  def intake
-    @listing = Listing.new
-    @product = Product.find(params[:id])
-    @listing.product_id = @product.id 
-    ebay = EbayCategory.find(params[:id])
-    @listing.ebay_category = ebay.category_id.to_s
-  end
+  # def intake    
+  #   @product = Product.find(params[:id])
+  #   @listing = Listing.create(product_id: @product.id)       
+  # end
 
   def specifics
 

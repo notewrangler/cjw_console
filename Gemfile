@@ -39,6 +39,12 @@ gem 'paperclip'
 
 gem 'workflow'
 
+gem 'ebayr'
+
+gem 'fakeweb'
+
+gem 'yaml_db'
+
 
 
 # Use ActiveModel has_secure_password
