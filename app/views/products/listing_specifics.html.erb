@@ -1,0 +1,49 @@
+<div class="container">
+	<div class"row">
+		<div class="col-md-4" >
+		<%= form_for(@product) do |f| %>
+  	<% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    		 <div class="form-field fatbottom">
+	       	 <i class='fa fa-barcode fa-2x fa-fw'></i><%= f.label :upc %><br>
+	      	 <%= f.text_field :upc, class: 'form-control', placeholder: "Enter Universal Price Code" %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='material-icons prefix' style="font-size: 30px">redeem</i><%= f.label :condition %><br>
+	        <%= f.select(:condition, options_for_select(condition, @product.condition), {}, {class: 'form-control', placeholder: "Select Condition"}) %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='material-icons prefix' style="font-size: 30px">playlist_add</i><%= f.label :quantity %><br>
+	        <%= f.text_field :quantity, class: 'form-control', placeholder: "Enter Quantity" %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class="fa fa-gavel fa-2x fa-fw"></i><%= f.label :listing_format %><br>
+	        <%= f.select(:listing_format, options_for_select(listing_format, @product.listing_format), {}, {class: 'form-control', placeholder: "Select Auction or Buy it now"}) %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='fa fa-usd fa-2x fa-fw'></i><%= f.label :listing_price %><br>
+	        <%= f.text_field :listing_price, class: 'form-control', placeholder: "0.00"%>
+	      </div>
+	      <div class="form-field fatbottom">
+	         <i class='material-icons prefix' style="font-size: 30px">gps_fixed</i>
+	         <%= f.label :item_location, 'Item Location' %><br>           
+	         <%= f.text_field :item_location,  class: 'form-control', placeholder: "City, State, ZIP" %>          
+	      </div><br>
+	      <div class="actions">
+	          <%= f.submit "Create Product", class: "btn btn-success"  %>
+	      </div><br><br>	    
+<% end %>
+						
+		</div>
+	</div>
+</div>

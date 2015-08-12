@@ -1,9 +1,0 @@
-<div class="container">
-	<div class"row">
-		<div class="col-md-4" id="main_category">
-				<% @categories.each do |c| %>
-					<h5><%= link_to c.main_category + " >", sub_1_category_path(c), product: @product %><h5> 
-				<% end %>			
-		</div>
-	</div>
-</div>

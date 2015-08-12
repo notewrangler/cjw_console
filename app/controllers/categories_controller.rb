@@ -44,7 +44,7 @@ class CategoriesController < ApplicationController
 	def assign_ebay_category
 		@product = Product.find(params[:product_id])
     @category = EbayCategory.find(params[:id])
-    @product.update_attributes(ebay_category: @category.category_id)
+    @product.update_attributes(ebay_category: @category.category_id, workflow_state: :category_chosen)
     redirect_to listing_specifics_product_path(@product)
 	end
 

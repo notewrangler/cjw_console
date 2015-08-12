@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   
   include ProductsHelper
+  include DetailsHelper
 
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
@@ -83,7 +84,7 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:title, :description, :purchase_date, :purchase_source, :purchase_price, :store_category,
-        :state, :ebay_category, :upc, :condition, :quantity, :listing_format, :listing_price, :listing_duration, :item_location, 
+        :workflow_state, :ebay_category, :upc, :condition, :quantity, :listing_format, :listing_price, :listing_duration, :item_location, 
         )
     end
 end

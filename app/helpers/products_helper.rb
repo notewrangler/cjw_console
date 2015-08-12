@@ -16,4 +16,7 @@ module ProductsHelper
 		# (["Women's Clothing",	"Men's Clothing", "Coffee Mugs", "Needlepoint",	"Kitchen Items", "Office Supplies",	"Other"])
 
 	end
+
+	
+
 end

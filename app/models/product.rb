@@ -9,10 +9,13 @@ class Product < ActiveRecord::Base
 			event :submit, :transitions_to => :inventory_not_listed			
 		end 
 		state :inventory_not_listed do 
+			event :choose_category, :transitions_to => :category_chosen
+		end
+		state :category_chosen do
 			event :list_item, :transitions_to => :inventory_listed
 		end
 		state :inventory_listed do 
-			event :sold, :transitions_to =>	:sold_not_shipped		
+			event :sell, :transitions_to =>	:sold_not_shipped		
 		end
 		state :sold_not_shipped do
 			event :ship, :transitions_to => :sold_shipped
