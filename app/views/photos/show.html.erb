@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div>
+      <h4 style="color: gray">Photo for: <span class="item-title"><%= @product.title %></span></h4>
+      <div class="upper-link">
+      	<%= link_to 'Back to Product', product_path(@photo.product_id) %>
+      </div>
+    </div>
+			<div class="photo-showpage">
+      <%= image_tag @photo.image_url(:showpage) %>  
+    	</div>    	
+		</div>		
+	</div>
+</div>

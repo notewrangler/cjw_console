@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
 	has_one :package
 	has_one :return_policy
 	has_one :ship_detail
+	has_many :photos
 
 	include ProductsHelper
 	include DetailsHelper

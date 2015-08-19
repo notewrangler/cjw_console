@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @photos = Photo.where("product_id = ?", @product.id)
   end
 
   # GET /products/new

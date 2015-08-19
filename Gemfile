@@ -35,7 +35,9 @@ gem 'autoprefixer-rails'
 
 gem 'font-awesome-sass'
 
-gem 'paperclip'
+# gem 'paperclip'
+
+gem 'database_cleaner'
 
 gem 'rmagick'
 

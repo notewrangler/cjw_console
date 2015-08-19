@@ -102,13 +102,25 @@
       <% end %> 
     </dl>
     
-      <%= link_to 'Edit', edit_product_path(@product) %> |
-      <%= link_to 'Back', products_path %><br>
-      <%= link_to_if(@product.ebay_category.blank?, 'List Item Now', main_path(@product), {class: 'btn btn-primary'}) %><br><br>
-      <%= link_to_if(@product.listing_title.blank?, 'Continue Listing', listing_start_product_path(@product), {class: 'btn btn-info'}) %><br><br>
+      <%= link_to 'Edit Product', edit_product_path(@product) %> |
+      <%= link_to 'Back', products_path %> |
+      <%= link_to 'Add Photo', upload_photo_path(@product) %><br><br>
+      <%= link_to_if(@product.ebay_category.blank?, 'List Item Now', main_path(@product), {class: 'btn btn-primary'}) %>
+      <%= link_to 'Edit Category Choice', main_path(@product) %><br><br>
+      <%= link_to_if(@product.listing_title.blank?, 'Continue Listing', listing_start_product_path(@product), {class: 'btn btn-info'}) %>
+      <%= link_to 'Edit Primary Listing Data', listing_start_product_path(@product) %><br><br>
       <%= link_to_if(@product.item_specifics.blank?, 'Add Item Specifics', listing_specifics_product_path(@product), {class: 'btn btn-warning'}) %>
+      <%= link_to 'Edit Item Specifics', listing_specifics_product_path(@product) %>
     </div>
   </div>  
+</div><br>
+<div class="container">
+  <% @photos.each do |photo| %>
+    <div class="photo">
+      <%= image_tag photo.image_url(:thumb) if photo.image? %><br>
+      <%= link_to 'Show Photo', photo_path(photo) %>
+    </div>
+   <% end %> 
 </div>
 
 

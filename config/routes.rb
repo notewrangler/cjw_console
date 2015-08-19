@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'sub_5/:id/:product_id', to: 'categories#sub_5', as: :sub_5
   get 'last/:id/:product_id',  to: 'categories#last',  as: :last
   put 'assign_ebay_category/:id/:product_id', to: 'categories#assign_ebay_category', as: :assign_ebay_category
-           
+  get 'upload_photo/:product_id/', to: 'photos#upload_photo', as: :upload_photo         
 
   
 
@@ -26,9 +26,10 @@ Rails.application.routes.draw do
     member do
       get 'listing_start', to: 'products#listing_start', as: :listing_start
       get 'listing_specifics', to: 'products#listing_specifics', as: :listing_specifics
-    end 
-        
+    end         
   end
+
+  resources :photos
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
