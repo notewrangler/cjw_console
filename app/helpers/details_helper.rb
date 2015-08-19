@@ -20,50 +20,24 @@ module DetailsHelper
 		end
 	end
 
-end
 
-def condition
-		[
-			['Pre-owned','Pre-owned'], 
-			['New with tags', 'New with tags'], 
-			['New without tags','New without tags'], 
-			['New with defects','New with defects'] 
+	def item_condition
+		[			
+			'Pre-owned',
+			'New with tags', 
+			'New without tags',
+			'New with defects' 
 		]
+	end	
+
+	def format_type	
+			['Auction', 'Fixed Price']	
 	end
 
-	def listing_format 
-		[
-			['Auction', 'Auction'],
-			['Buy it now', 'Buy it now']
-		]		
-	end
-
-	def listing_duration
-		[]
-	end
-
-	def package_type
-		['Package(or thick envelope)', 'Letter', 'Large Envelope', 'Large Package']
-	end
-
-	def shipping_weight
-		[
-			'1 lb or less',
-			'1+ to 2 lbs',
-			'2+ to 3 lbs',
-			'3+ to 4 lbs',
-			'4+ to 5 lbs',
-			'5+ to 6 lbs',
-			'6+ to 7 lbs',
-			'7+ to 8 lbs',
-			'8+ to 9 lbs',
-			'9+ to 10 lbs'
-		]
-	end
-
-	def return_policy
-		['Returns accepted, 14 days, buyer, money back', 'No returns accepted']
-	end
+	def durations
+		["Select", "1 day", "3 days","5 days", "7 days", "10 days", "30 days", "Good 'til cancelled"]
+	end	
+	
 
 	def clothing_color
 		[
@@ -86,7 +60,7 @@ def condition
 		]
 	end
 
-	# MEN'S CLOTHING
+	# MEN'S CLOTHING/////////////////////////////////
 
 	def size_type_men
 		['Regular', 'Big & Tall']
@@ -176,7 +150,7 @@ def condition
 		]
 	end
 
-	# WOMEN'S CLOTHING
+	# WOMEN'S CLOTHING//////////////////////////////
 
 	def size_type_women
 		[ 'Plus',
@@ -264,9 +238,9 @@ def condition
 			'Textured',
 			'Wet look, Shiny'
 		]
-	end
+	end	
 
-	def style_women
+	def style_women_top
 		[
 			'SS cotton sweater',
 			'Blouse',
@@ -283,4 +257,89 @@ def condition
 			'Western',
 			'Wrap'
 		]
+	end	
+
+	def style_women_dress
+		[
+			'Asymmetrical Hem',
+			'Ball Gown',
+			'Blouson',
+			'Bubble',
+			'Corset',
+			'Empire Waist',
+			'Maxi',
+			'One Shoulder',
+			'Peplum',
+			'Sexy',
+			'Sheath',
+			'Shift',
+			'Shirt Dress',
+			'Stretch, Bodycon',
+			'Sundress',
+			'Sweater Dress',
+			'Tiered',
+			'Tunic',
+			'Wiggle/Pencil',
+			'Wrap Dress'
+		]
+	end	
+
+	def style_women_sleeve
+		[
+			'3/4 Sleeve', 
+			'Batwing, Dolman',
+			'Cap Sleeve',
+			'Halter',
+			'Kimono Sleeve',
+			'Long Sleeve',
+			'Off-Shoulder',
+			'One Shoulder',
+			'Short Sleeve',
+			'Sleeveless',
+			'Spaghetti Strap',
+			'Strapless'
+		]
 	end
+
+	def label_designer_women
+		[
+			'Handmade',
+			'Adrianna Papell',
+			'Ann Taylor',
+			'Ann Taylor LOFT',
+			'Anthropologie',
+			'Banana Republic',
+			'BCBG MAX AZRIA',
+			'bebe',
+			'Betsy Johnson',
+			'DVF',
+			'Ever-Pretty',
+			'Express',
+			'FOREVER 21',
+			'Free People',
+			'Hawaiian',
+			'J.Crew',
+			'Jones New York',
+			'Jovani',
+			'Laundry',
+			'Lilly Pulitzer',
+			'Roberto Cavalli',
+			'Talbots',
+			'Taylor',
+			'Unbranded'
+		]
+	end	
+
+	def occasion_women
+		[
+			'Casual',
+			'Clubwear',
+			'Cocktail',
+			'Formal',
+			'Little Black Dress',
+			'Summer/Beach',
+			'Wear to Work'
+		]
+	end
+
+end

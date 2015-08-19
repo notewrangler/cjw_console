@@ -1,0 +1,86 @@
+				<%= form_for(@product) do |f| %>
+				  	<% if @product.errors.any? %>
+					    <div id="error_explanation">
+					      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+					      <ul>
+						      <% @product.errors.full_messages.each do |message| %>
+						        <li><%= message %></li>
+						      <% end %>
+					      </ul>
+					    </div>
+				  	<% end %>
+
+	<div class="container">
+		<div class"row">
+			<div class="col-md-4" >
+
+				<div class="fatbottom">
+					<h4 style="color: gray">Item: <span class="item-title"><%= @product.title %></span> -- Listing Specifics</h4> 
+					<h4 style="color: gray">Store Category: <span class="item-title"><%= @product.store_category %></span></h4> 				
+				</div>
+				<div class="form-field fatbottom">
+       	 <i class='flaticon-paint81'></i><%= f.label :clothing_color, "Garment Color" %><br>
+      	 <%= f.select(:clothing_color, options_for_select(clothing_color), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+      	</div>  
+    		<div class="form-field fatbottom">
+	       	 <i class='flaticon-dress13'></i><%= f.label :size_type_women, "Size Category" %><br>
+	      	 <%= f.select(:size_type_women, options_for_select(size_type_women), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='flaticon-measure'></i><%= f.label :size_women, "Size" %><br>
+	        <%= f.select(:size_women, options_for_select(size_women), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='flaticon-fabric'></i><%= f.label :material_women, "Material/Fabric" %><br>
+	        <%= f.select(:material_women, options_for_select(material_women), {:include_blank => 'Select'}, {class: 'form-control'})  %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class="flaticon-wine72"></i><%= f.label :occasion_women, "Occasion" %><br>
+	        <%= f.select(:occasion_women, options_for_select(occasion_women), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	      </div>
+	    </div>
+	  </div>  
+    <div class="row">
+    	<div class="col-md-4">
+	      <div class="form-field fatbottom" style="margin-top: 76px;">
+	        <i class="flaticon-clothing111"></i><%= f.label :pattern_women, "Pattern" %><br>
+	        <%= f.select(:pattern_women, options_for_select(pattern_women), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	      </div> 
+	      <div class="form-field fatbottom" >
+	        	<i class="flaticon-clothing79"></i><%= f.label :style_women_top, "Style (Top)" %><br>
+	          <%= f.select(:style_women_top, options_for_select(style_women_top), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	      </div> 
+	      <div class="form-field fatbottom" >
+	        	<i class="flaticon-fashion15"></i><%= f.label :style_women_dress, "Style (Dress/Skirt)" %><br>
+	          <%= f.select(:style_women_dress, options_for_select(style_women_dress), {:include_blank => 'Select'}, {class: 'form-control'}) %>	      
+	      </div>
+	      <div class="form-field fatbottom" >
+	        	<i class="flaticon-clothing63"></i><%= f.label :style_women_sleeve, "Style (Sleeve)" %><br>
+	          <%= f.select(:style_women_sleeve, options_for_select(style_women_sleeve), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	      </div>
+	      <div class="form-field fatbottom" style="padding-top: 10px;">
+	        <i class='fa fa-tags fa-2x fa-fw'></i><%= f.label :label_designer_women, "Label/Designer" %><br>
+	        <%= f.select(:label_designer_women, options_for_select(label_designer_women), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	      </div><br>	     
+	      <div class="actions">
+	          <%= f.submit "Continue", class: "btn btn-info"  %>
+	      </div>
+	    </div>
+	  </div>
+	</div><br><br><br>
+
+	    <% end %> 
+	    <button class="btn btn-default" id="sizely">Open size.ly Window</button>
+	    <div class="container" id="sizely-window" style="display: none;">
+	    	<iframe src="http://size.ly/#tops" id="sizely-frame"></iframe>
+	    </div>
+	      
+
+	      <div>Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+
+	     <script type="text/javascript">
+	     $('#sizely').click(function() {
+	     	$('#sizely-window').slideToggle();
+	     });
+
+	     </script>  

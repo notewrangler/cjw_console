@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   resources :products do 
     member do
+      get 'listing_start', to: 'products#listing_start', as: :listing_start
       get 'listing_specifics', to: 'products#listing_specifics', as: :listing_specifics
     end 
         

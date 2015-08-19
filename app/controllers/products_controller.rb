@@ -24,15 +24,20 @@ class ProductsController < ApplicationController
   def assign_ebay_category
     @product = Product.find(params[:product_id])
     @category = EbayCategory.find(params[:id])
-    @product.update_attributes(ebay_category: @category.category_id)
+    @product.update_attributes(ebay_category: @category.category_id, item_specifics: {})
     redirect_to listing_specifics_product_path(@product)
   end
+
+  def listing_start
+    @product = Product.find(params[:id])
+  end
+
   def listing_specifics
     @product = Product.find(params[:id])
   end
 
   # GET /products/1/edit
-  def edit
+  def edit    
   end
 
   # POST /products
@@ -83,8 +88,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :purchase_date, :purchase_source, :purchase_price, :store_category,
-        :workflow_state, :ebay_category, :upc, :condition, :quantity, :listing_format, :listing_price, :listing_duration, :item_location, 
-        )
+      params.require(:product).permit!
     end
 end

@@ -1,12 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-3">
       <p id="notice"><%= notice %></p>
 
-      <p>
-        <strong>Title:</strong>
-        <%= @product.title %>
-      </p>
+    <div>
+      <h4 style="color: gray">Item: <span class="item-title"><%= @product.title %></span></h4>
+    </div>
 
       <p>
         <strong>Description:</strong><br> 
@@ -34,11 +33,83 @@
         <%= @product.store_category %>
       </p>
 
+      <p>
+        <strong>eBay Category:</strong>
+        <%= @product.ebay_category %>
+      </p>
+
+      <p>
+        <strong>UPC:</strong>
+        <%= @product.upc %>
+      </p>
+
+      <p>
+        <strong>Listing Title:</strong>
+        <%= @product.listing_title %>
+      </p>
+
+      <p>
+        <strong>Listing Price:</strong>
+        <%= number_to_currency(@product.listing_price) %>
+      </p>
+    </div>
+ 
+    <div class="col-md-3">
+
+      <p>
+        <strong>Listing Format:</strong>
+        <%= @product.listing_format %>
+      </p>
+
+      <p>
+        <strong>Listing Duration:</strong>
+        <%= @product.listing_duration %>
+      </p>
+
+      <p>
+        <strong>Condition:</strong>
+        <%= @product.condition %>
+      </p>
+
+      <p>
+        <strong>Quantity:</strong>
+        <%= @product.quantity %>
+      </p>
+
+      <p>
+        <strong>Item Location:</strong>
+        <%= @product.item_location %>
+      </p>
+
+      <p>
+        <strong>Country/Region of Manufacture:</strong>
+        <%= @product.country_region_of_manufacture %>
+      </p>
+      <p>
+        <strong>Item Location:</strong>
+        <%= @product.item_location %>
+      </p>
+    </div>
+  <!-- </div> -->
+  <!-- <div class="row"> -->
+    <div class="col-md-3">
+    <dl>
+      <% if @product.item_specifics %>    
+        <% @product.item_specifics.each do |key, value|  %>
+          <dt> <%= key.humanize if !value.blank? %> </dt>
+          <dd><%= value %></dd>
+        <% end %>
+      <% end %> 
+    </dl>
+    
       <%= link_to 'Edit', edit_product_path(@product) %> |
       <%= link_to 'Back', products_path %><br>
-      <%= link_to 'List Item Now', main_path(@product), class: "btn btn-primary" %>
+      <%= link_to_if(@product.ebay_category.blank?, 'List Item Now', main_path(@product), {class: 'btn btn-primary'}) %><br><br>
+      <%= link_to_if(@product.listing_title.blank?, 'Continue Listing', listing_start_product_path(@product), {class: 'btn btn-info'}) %><br><br>
+      <%= link_to_if(@product.item_specifics.blank?, 'Add Item Specifics', listing_specifics_product_path(@product), {class: 'btn btn-warning'}) %>
     </div>
-  </div>
+  </div>  
 </div>
+
 
 

@@ -37,6 +37,10 @@ gem 'font-awesome-sass'
 
 gem 'paperclip'
 
+gem 'rmagick'
+
+gem 'carrierwave'
+
 gem 'workflow'
 
 gem 'ebayr'
@@ -44,6 +48,8 @@ gem 'ebayr'
 gem 'fakeweb'
 
 gem 'yaml_db'
+
+gem 'awesome_print'
 
 
 

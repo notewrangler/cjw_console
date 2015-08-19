@@ -12,11 +12,11 @@
   <% end %>
   
     		 <div class="form-field fatbottom">
-	       	 <span class='small material-icons prefix'>create</span><%= f.label :title %><br>
+	       	 <span class='small material-icons prefix'>create</span><%= f.label :title, "Item Name (short form)" %><br>
 	      	 <%= f.text_field :title, class: 'form-control', placeholder: "What's this thing?" %>
 	      </div>
 	      <div class="form-field fatbottom">
-	        <i class='small material-icons prefix'>description</i><%= f.label :description %><br>
+	        <i class='small material-icons prefix'>description</i><%= f.label :description, "Condition Description" %><br>
 	        <%= f.text_area :description, class: 'form-control', style: "min-height: 130px", placeholder: "Tell us something about it..."%>
 	      </div>
 	      <div class="form-field fatbottom">

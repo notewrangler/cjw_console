@@ -1,8 +1,15 @@
 class Product < ActiveRecord::Base
 
+	has_one :package
+	has_one :return_policy
+	has_one :ship_detail
+
 	include ProductsHelper
+	include DetailsHelper
 	include Workflow
-	
+
+	store_accessor :item_specifics, :clothing_color, :size_type_women, :size_women, :material_women, :pattern_women, :occasion_women, :style_women_top, :style_women_dress, :style_women_sleeve, :label_designer_women
+
 
 	workflow do 
 		state :new do 

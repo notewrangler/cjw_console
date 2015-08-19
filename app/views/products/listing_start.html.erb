@@ -1,0 +1,92 @@
+<div class="container">
+	<div class"row">
+		<div class="col-md-5 col-md-offset-3" >
+		<%= form_for(@product) do |f| %>
+		  	<% if @product.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+			      <ul>
+				      <% @product.errors.full_messages.each do |message| %>
+				        <li><%= message %></li>
+				      <% end %>
+			      </ul>
+			    </div>
+		  	<% end %>
+
+				<div class="fatbottom">
+					<h4 style="color: gray">Item: <span class="item-title"><%= @product.title %></span> -- Listing Specifics</h4> 					
+				</div>
+				<div class="form-field fatbottom">
+       	 <i class='fa fa-pencil fa-2x fa-fw'></i><%= f.label :listing_title, "Full Listing Title" %><br>
+      	 <%= f.text_field :listing_title, class: 'form-control', placeholder: "Enter Title for eBay Listing" %>
+      	</div>  
+    		<div class="form-field fatbottom">
+	       	 <i class='fa fa-barcode fa-2x fa-fw'></i><%= f.label :upc %><br>
+	      	 <%= f.text_field :upc, class: 'form-control', placeholder: "Enter 12-digit Universal Product Code (if available)" %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='material-icons prefix' style="font-size: 30px">redeem</i><%= f.label :condition %><br>
+	        <%= f.select(:condition, options_for_select(item_condition), {:include_blank => 'Select'}, {class: 'form-control' }) %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='material-icons prefix' style="font-size: 30px">playlist_add</i><%= f.label :quantity %><br>
+	        <%= f.text_field :quantity, class: 'form-control', value: 1 %>
+	      </div>
+	      <div class="form-field fatbottom" id="format">
+	        <i class="fa fa-bullhorn fa-2x fa-fw"></i><%= f.label :listing_format %><br>
+	        <%= f.select(:listing_format, options_for_select(format_type), {:include_blank => 'Select'}, {class: 'form-control', id: 'format-field'}) %>
+	      </div>
+	       <div class="form-field fatbottom duration" id="auction">
+	        	<i class="fa fa-hourglass-1 fa-2x fa-fw"></i><%= f.label :listing_duration, "Listing Duration" %><br>
+	          <%= f.select(:listing_duration, options_for_select(durations), {}, {class: 'form-control', id: 'format-choices'}) %>
+	      </div>	     
+	      <div class="form-field fatbottom">
+	        <i class='fa fa-usd fa-2x fa-fw'></i><%= f.label :listing_price %><br>
+	        <%= f.text_field :listing_price, class: 'form-control', placeholder: "0.00"%>
+	      </div>
+	      <div class="form-field fatbottom">
+	         <i class='material-icons prefix' style="font-size: 30px">gps_fixed</i>
+	         <%= f.label :item_location, 'Item Location' %><br>           
+	         <%= f.text_field :item_location,  class: 'form-control', value: "Las Vegas, NV, 89102, United States" %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class="fa fa-flag fa-2x fa-fw"></i><%= f.label :country_region_of_manufacture, "Country/Region of Manufacture" %><br>
+	        <%= f.select(:country_region_of_manufacture, options_for_select(countries), {}, {class: 'form-control'}) %>
+	      </div>
+	      <br>
+	      <div class="actions">
+	          <%= f.submit "Continue", class: "btn btn-info"  %>
+	      </div><br><br>	    
+		<% end %>
+						
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+		var listFormat = $('#format-field').val();
+		$('#format-choices').children().eq(0).attr("disabled", true);
+
+		function setList(lFormat) {
+		if (lFormat === "Auction") {
+			console.log($('#format-choices').children().eq(0).text());
+			$('#format-choices').children().eq(1).show();
+			$('#format-choices').children().eq(6).hide();
+			$('#format-choices').children().eq(7).hide();		
+		} else if (lFormat === "Fixed Price") {
+			console.log($('#format-choices').children().eq(6).text());
+			$('#format-choices').children().eq(1).hide();
+			$('#format-choices').children().eq(6).show();
+			$('#format-choices').children().eq(7).show();	
+			}
+		}
+
+	$('#format-field').change(function() {
+		listFormat = $(this).val();
+		setList(listFormat);
+		});
+
+		
+
+</script>
+ 

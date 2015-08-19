@@ -1,5 +1,8 @@
 <div class="container">
 
+	<div>
+		<h4 style="color: gray">Item: <span class="item-title"><%= @product.title %></span> -- Select Listing Category</h4>
+	</div>
 
 	<div class="row">
 		<div class="col-md-8">	
@@ -11,7 +14,7 @@
 	<div class="button-breathe">
 		<%= form_tag assign_ebay_category_path, method: :put do %>		
    		
-   		<%= submit_tag "Select as eBay Category", class: "btn btn-success" %>
+   		<%= submit_tag "Finalize Category Selection", class: "btn btn-success" %>
    <% end %>
 	</div>
 
