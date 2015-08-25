@@ -29,8 +29,6 @@ gem 'gon'
 
 gem 'bootstrap-sass'
 
-gem 'bootstrap-select-rails'
-
 gem 'autoprefixer-rails'
 
 gem 'font-awesome-sass'
@@ -44,6 +42,8 @@ gem 'rmagick'
 gem 'carrierwave'
 
 gem 'workflow'
+
+gem 'fullcalendar-rails'
 
 gem 'ebayr'
 

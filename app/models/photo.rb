@@ -3,6 +3,8 @@ class Photo < ActiveRecord::Base
 
 	mount_uploader :image, ImageUploader
 
+	# validates :image, presence: true
+
 	before_save :grab_file_name
 
 	def grab_file_name

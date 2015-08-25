@@ -10,77 +10,138 @@
 					    </div>
 				  	<% end %>
 
-	<div class="container">
+	<div class="container" id="big-deal">
 		<div class"row">
-			<div class="col-md-4" >
-
+			<div class="col-md-4" >			
 				<div class="fatbottom">
 					<h4 style="color: gray">Item: <span class="item-title"><%= @product.title %></span> -- Listing Specifics</h4> 
-					<h4 style="color: gray">Store Category: <span class="item-title"><%= @product.store_category %></span></h4> 				
+					<h4 style="color: gray">Store Category: <b style="color: #444041"><%= @product.store_category %></b></h4>  				
 				</div>
+
 				<div class="form-field fatbottom">
-       	 <i class='flaticon-paint81'></i><%= f.label :clothing_color, "Garment Color" %><br>
-      	 <%= f.select(:clothing_color, options_for_select(clothing_color), {:include_blank => 'Select'}, {class: 'form-control'}) %>
-      	</div>  
+				 <i class='flaticon-paint81'></i><%= f.label :clothing_color, "Garment Color" %> <button  class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+				 		<%= f.text_field :clothing_color, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new color'} %>	     	 										
+	      	  <%= f.select(:clothing_color, options_for_select(clothing_color), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>					      	 
+        </div>      	  
     		<div class="form-field fatbottom">
-	       	 <i class='flaticon-dress13'></i><%= f.label :size_type_women, "Size Category" %><br>
-	      	 <%= f.select(:size_type_women, options_for_select(size_type_women), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	       	 <i class='flaticon-dress13'></i><%= f.label :size_type_women, "Size Category" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	       	 <%= f.text_field :size_type_women, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new size category'} %>
+	      	 <%= f.select(:size_type_women, options_for_select(size_type_women), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
 	      </div>
 	      <div class="form-field fatbottom">
-	        <i class='flaticon-measure'></i><%= f.label :size_women, "Size" %><br>
-	        <%= f.select(:size_women, options_for_select(size_women), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	        <i class='flaticon-measure'></i><%= f.label :size_women, "Size" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        <%= f.text_field :size_women, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new size'} %>
+	        <%= f.select(:size_women, options_for_select(size_women), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
 	      </div>
 	      <div class="form-field fatbottom">
-	        <i class='flaticon-fabric'></i><%= f.label :material_women, "Material/Fabric" %><br>
-	        <%= f.select(:material_women, options_for_select(material_women), {:include_blank => 'Select'}, {class: 'form-control'})  %>
+	        <i class='flaticon-fabric'></i><%= f.label :material_women, "Material/Fabric" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        <%= f.text_field :material_women, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new material'} %>
+	        <%= f.select(:material_women, options_for_select(material_women), {:include_blank => 'Select'}, {class: 'form-control', disabled: false})  %>
 	      </div>
 	      <div class="form-field fatbottom">
-	        <i class="flaticon-wine72"></i><%= f.label :occasion_women, "Occasion" %><br>
-	        <%= f.select(:occasion_women, options_for_select(occasion_women), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	        <i class="flaticon-wine72"></i><%= f.label :occasion_women, "Occasion" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        <%= f.text_field :occasion_women, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new occasion'} %>
+	        <%= f.select(:occasion_women, options_for_select(occasion_women), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
 	      </div>
 	    </div>
 	  </div>  
     <div class="row">
     	<div class="col-md-4">
 	      <div class="form-field fatbottom" style="margin-top: 76px;">
-	        <i class="flaticon-clothing111"></i><%= f.label :pattern_women, "Pattern" %><br>
-	        <%= f.select(:pattern_women, options_for_select(pattern_women), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	        <i class="flaticon-clothing111"></i><%= f.label :pattern_women, "Pattern" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        <%= f.text_field :pattern_women, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new pattern'} %>
+	        <%= f.select(:pattern_women, options_for_select(pattern_women), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
 	      </div> 
 	      <div class="form-field fatbottom" >
-	        	<i class="flaticon-clothing79"></i><%= f.label :style_women_top, "Style (Top)" %><br>
-	          <%= f.select(:style_women_top, options_for_select(style_women_top), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	        	<i class="flaticon-clothing79"></i><%= f.label :style_women_top, "Style (Top)" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        	<%= f.text_field :style_women_top, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new top style'} %>
+	          <%= f.select(:style_women_top, options_for_select(style_women_top), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
 	      </div> 
 	      <div class="form-field fatbottom" >
-	        	<i class="flaticon-fashion15"></i><%= f.label :style_women_dress, "Style (Dress/Skirt)" %><br>
-	          <%= f.select(:style_women_dress, options_for_select(style_women_dress), {:include_blank => 'Select'}, {class: 'form-control'}) %>	      
+	        	<i class="flaticon-fashion15"></i><%= f.label :style_women_dress, "Style (Dress/Skirt)" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        	<%= f.text_field :style_women_dress, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new dress/skirt style'} %>
+	          <%= f.select(:style_women_dress, options_for_select(style_women_dress), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>	      
 	      </div>
 	      <div class="form-field fatbottom" >
-	        	<i class="flaticon-clothing63"></i><%= f.label :style_women_sleeve, "Style (Sleeve)" %><br>
-	          <%= f.select(:style_women_sleeve, options_for_select(style_women_sleeve), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	        	<i class="flaticon-clothing63"></i><%= f.label :style_women_sleeve, "Style (Sleeve)" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        	<%= f.text_field :style_women_sleeve, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new sleeve style'} %>
+	          <%= f.select(:style_women_sleeve, options_for_select(style_women_sleeve), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
 	      </div>
 	      <div class="form-field fatbottom" style="padding-top: 10px;">
-	        <i class='fa fa-tags fa-2x fa-fw'></i><%= f.label :label_designer_women, "Label/Designer" %><br>
-	        <%= f.select(:label_designer_women, options_for_select(label_designer_women), {:include_blank => 'Select'}, {class: 'form-control'}) %>
+	        <i class='fa fa-tags fa-2x fa-fw'></i><%= f.label :label_designer_women, "Label/Designer" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        <%= f.text_field :label_designer_women, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new label/designer'} %>
+	        <%= f.select(:label_designer_women, options_for_select(label_designer_women), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>	        
+	      </div>
+	      <div class="form-field fatbottom" style="padding-top: 10px;">
+	        <i class='fa fa-tags fa-2x fa-fw'></i><%= f.label :sizely, "Size.ly Image (see below)" %><br>
+	        <%= f.text_field :sizely, {class: 'form-control', placeholder: 'Paste Size.ly Html Code Here'} %>                
 	      </div><br>	     
 	      <div class="actions">
 	          <%= f.submit "Continue", class: "btn btn-info"  %>
-	      </div>
+	      </div>	     
 	    </div>
 	  </div>
-	</div><br><br><br>
-
+	</div>
 	    <% end %> 
-	    <button class="btn btn-default" id="sizely">Open size.ly Window</button>
+	<div class="container">
+	    <i class="fa fa-arrow-down fa-3x"></i>
+	    <h2><b>Size.ly</b><h2><h4> is a wonderful, FREE service allowing you to graphically enter detailed garment measurements.</h4>
+	    <p><b>Instructions:</b></p>
+	    <ol>
+	    	<li>Click <span class="fa fa-arrow-down"></span>Toggle Size.ly Window for Measurements"</li>
+	    	<li>Select garment type</li>
+	    	<li>Enter measurements (in inches or centimeters)</li>
+	    	<li>Click "Generate Image"</li>
+	    	<li>Copy HTML CODE</li>
+	    	<li>Click "Toggle Size.ly Window" to close</li>
+	    	<li>Paste Code into "Size.ly Image"</li>
+	    </ol>
+	    <button class="btn btn-primary" id="sizely">Toggle Size.ly Window for Measurements</button>
 	    <div class="container" id="sizely-window" style="display: none;">
 	    	<iframe src="http://size.ly/#tops" id="sizely-frame"></iframe>
-	    </div>
+	    </div><br><br><br><br>
 	      
 
 	      <div>Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+	</div>
 
-	     <script type="text/javascript">
-	     $('#sizely').click(function() {
+
+
+	     <script type="text/javascript">	     
+
+	     $.fn.toggleDisabled = function () {
+        return this.each(function () {
+            var $this = $(this);
+            if ($this.prop('disabled')) {
+                $this.prop('disabled', false).fadeIn('slow');
+            } else {
+                $this.prop('disabled', true).hide();
+            }
+        });
+    	};
+
+    	 $.fn.toggleLabel = function () {
+        return this.each(function () {
+            var $this = $(this);
+            console.log($this.text());
+            if ($this.text() === 'Enter your Own') {
+                $this.text('Select from DropDown');
+            } else {
+                $this.text('Enter your Own');
+            }
+        });
+    	};	    
+
+			  $('.flipper').click(function(e){
+			  	e.preventDefault();			  
+			  	$(this).nextAll().toggleDisabled();
+			  	$(this).toggleLabel();
+			  }); 
+
+			  $('#sizely').click(function(e) {
+			  	e.preventDefault();
 	     	$('#sizely-window').slideToggle();
+	     	$('.form-field').slideToggle();
 	     });
 
 	     </script>  

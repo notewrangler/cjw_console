@@ -1,11 +1,28 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <p id="notice"><%= notice %></p>
-
+  <p id="notice"><%= notice %></p>
     <div>
       <h4 style="color: gray">Item: <span class="item-title"><%= @product.title %></span></h4>
+      <h4 style="color: gray">Store Category: <b style="color: #444041"><%= @product.store_category %></b></h4> 
     </div>
+
+ <div class="row">
+    <ul>
+    <% @photos.each do |photo| %>      
+         <li class="photo"><%= image_tag photo.image_url(:thumb) if photo.image? %><br>
+         <%= link_to photo.name, photo_path(photo) %> | <%= link_to "delete", photo, :confirm => 'Are you sure?', :method => :delete %></li>     
+     <% end %>
+    </ul>
+  </div> 
+
+     
+   <div class="btn-group link-row" role="group" aria-label="...">
+      <%= link_to 'Edit Product', edit_product_path(@product), {class: "btn btn-default"} %> 
+      <%= link_to 'Back', products_path, {class: "btn btn-default"} %> 
+      <%= link_to 'Add Photo', upload_photo_path(@product), {class: "btn btn-default"} %>
+   </div><br><br>
+
+  <div class="row">
+    <div class="col-md-3">      
 
       <p>
         <strong>Description:</strong><br> 
@@ -88,40 +105,38 @@
       <p>
         <strong>Item Location:</strong>
         <%= @product.item_location %>
-      </p>
+      </p><br>
+      
     </div>
-  <!-- </div> -->
-  <!-- <div class="row"> -->
+
     <div class="col-md-3">
-    <dl>
-      <% if @product.item_specifics %>    
-        <% @product.item_specifics.each do |key, value|  %>
-          <dt> <%= key.humanize if !value.blank? %> </dt>
-          <dd><%= value %></dd>
-        <% end %>
-      <% end %> 
-    </dl>
-    
-      <%= link_to 'Edit Product', edit_product_path(@product) %> |
-      <%= link_to 'Back', products_path %> |
-      <%= link_to 'Add Photo', upload_photo_path(@product) %><br><br>
-      <%= link_to_if(@product.ebay_category.blank?, 'List Item Now', main_path(@product), {class: 'btn btn-primary'}) %>
+      <dl>
+        <% if @product.item_specifics %>    
+          <% @product.item_specifics.each do |key, value|  %>
+            <dt><%= key.humanize if !value.blank? && key != 'sizely' %></dt>
+            <dd><%= value if key != 'sizely' %></dd>
+          <% end %>
+        <% end %> 
+      </dl>
+    </div> 
+
+    <div class="col-md-3">      
+      <%= link_to_if(@product.ebay_category.blank?, 'Choose Category', main_path(@product), {class: 'btn btn-primary'}) %>
       <%= link_to 'Edit Category Choice', main_path(@product) %><br><br>
       <%= link_to_if(@product.listing_title.blank?, 'Continue Listing', listing_start_product_path(@product), {class: 'btn btn-info'}) %>
       <%= link_to 'Edit Primary Listing Data', listing_start_product_path(@product) %><br><br>
       <%= link_to_if(@product.item_specifics.blank?, 'Add Item Specifics', listing_specifics_product_path(@product), {class: 'btn btn-warning'}) %>
-      <%= link_to 'Edit Item Specifics', listing_specifics_product_path(@product) %>
+      <%= link_to 'Edit Item Specifics', listing_specifics_product_path(@product) %></div>    
+    </div><br>
+    <div>
+      <% if @product.item_specifics %>
+          <% if @product.item_specifics['sizely'] %>
+            <h2><b>Sizely </b>Measurements<h2>
+            <%= content_tag(@product.item_specifics['sizely'])  %>
+          <% end %>
+      <% end %>
     </div>
-  </div>  
-</div><br>
-<div class="container">
-  <% @photos.each do |photo| %>
-    <div class="photo">
-      <%= image_tag photo.image_url(:thumb) if photo.image? %><br>
-      <%= link_to 'Show Photo', photo_path(photo) %>
-    </div>
-   <% end %> 
-</div>
 
 
+</div> 
 

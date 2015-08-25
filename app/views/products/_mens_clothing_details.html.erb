@@ -1,0 +1,164 @@
+			<%= form_for(@product) do |f| %>
+				  	<% if @product.errors.any? %>
+					    <div id="error_explanation">
+					      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+					      <ul>
+						      <% @product.errors.full_messages.each do |message| %>
+						        <li><%= message %></li>
+						      <% end %>
+					      </ul>
+					    </div>
+				  	<% end %>
+
+	<div class="container">
+		<div class"row">
+			<div class="col-md-4" >			
+				<div class="fatbottom">
+					<h4 style="color: gray">Item: <span class="item-title"><%= @product.title %></span> -- Listing Specifics</h4> 
+					<h4 style="color: gray">Store Category: <b style="color: #444041"><%= @product.store_category %></b></h4>  				
+				</div>
+				<div class="form-field fatbottom">
+				 <i class='flaticon-paint81'></i><%= f.label :clothing_color, "Garment Color" %><button  class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+				 		<%= f.text_field :clothing_color, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new color'} %>	     	 										
+	      	  <%= f.select(:clothing_color, options_for_select(clothing_color), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>					      	 
+        </div>      	  
+    		<div class="form-field fatbottom">
+	       	 <i class='flaticon-tie13'></i><%= f.label :size_type_men, "Size Category" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br><br>
+	       	 <%= f.text_field :size_type_men, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new size category'} %>
+	      	 <%= f.select(:size_type_men, options_for_select(size_type_men), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
+	      </div>
+	      <div class="form-field fatbottom">
+	        <i class='flaticon-measure'></i><%= f.label :size_men, "Size" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        <%= f.text_field :size_men, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new size'} %>
+	        <%= f.select(:size_men, options_for_select(size_men), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
+	      </div>		            
+	      <div class="form-field fatbottom">
+	        <i class="flaticon-clothing46"></i><%= f.label :size_dress_shirt_men, "Size (Dress Shirt)" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br><br>
+	        <%= f.text_field :size_dress_shirt_men, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new dress shirt size'} %>
+	        <%= f.select(:size_dress_shirt_men, options_for_select(size_dress_shirt_men), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
+	      </div>
+	       <div class="form-field fatbottom" >
+	        	<i class="flaticon-clothing53"></i><%= f.label :sleeve_length_men, "Sleeve Length" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br><br>
+	        	<%= f.text_field :sleeve_length_men, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new sleeve length'} %>
+	          <%= f.select(:sleeve_length_men, options_for_select(sleeve_length_men), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
+	      </div>
+	      <div class="form-field fatbottom" >
+	        	<i class="fa fa-thumbs-o-up fa-2x fa-fw"></i><%= f.label :cuff_style_dress_shirt_men, "Cuff Style" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br><br>
+	        	<%= f.text_field :cuff_style_dress_shirt_men, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new cuff style'} %>
+	          <%= f.select(:cuff_style_dress_shirt_men, options_for_select(cuff_style_dress_shirt_men), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
+	      </div> 
+	      <div class="form-field fatbottom" >
+	        	<i class="flaticon-clothing71"></i><%= f.label :style_men_casual_shirt, "Style (Casual Shirt)" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br><br>
+	        	<%= f.text_field :style_men_casual_shirt, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new top style'} %>
+	          <%= f.select(:style_men_casual_shirt, options_for_select(style_men_casual_shirt), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
+	      </div> 
+	     
+	    </div>
+	  </div>  
+    <!-- <div class="row"> -->
+    	<div class="col-md-4">
+				<div class="form-field fatbottom" style="margin-top: 76px;">
+	        	<i class="flaticon-clothing173"></i><%= f.label :style_men_pants_jeans, "Style (Mens Pants/Jeans)" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br><br>
+	        	<%= f.text_field :style_men_pants_jeans, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new dress/skirt style'} %>
+	          <%= f.select(:style_men_pants_jeans, options_for_select(style_men_pants_jeans), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>	      
+	      </div>
+	      <div class="form-field fatbottom" >
+	        	<i class="flaticon-clothing166"></i><%= f.label :inseam_men, "Inseam" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br><br>
+	        	<%= f.text_field :inseam_men, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new inseam measurement'} %>
+	          <%= f.select(:inseam_men, options_for_select(inseam_men), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>	      
+	      </div>
+	      <div class="form-field fatbottom" >
+	        	<i class="flaticon-baby62"></i><%= f.label :bottoms_size_men, "Bottoms Size (men)" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br><br>
+	        	<%= f.text_field :bottoms_size_men, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new bottoms size'} %>
+	          <%= f.select(:bottoms_size_men, options_for_select(bottoms_size_men), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>	      
+	      </div>    	
+	      <div class="form-field fatbottom" >
+	        <i class="flaticon-circle72"></i><%= f.label :pattern_men, "Pattern" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        <%= f.text_field :pattern_men, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new pattern'} %>
+	        <%= f.select(:pattern_men, options_for_select(pattern_men), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>
+	      </div> 
+	       <div class="form-field fatbottom">
+	        <i class='flaticon-fabric'></i><%= f.label :material_men, "Material/Fabric" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br>
+	        <%= f.text_field :material_men, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new material'} %>
+	        <%= f.select(:material_men, options_for_select(material_men), {:include_blank => 'Select'}, {class: 'form-control', disabled: false})  %>
+	      </div>		     
+	      <div class="form-field fatbottom" style="padding-top: 10px;">
+	        <i class='fa fa-tags fa-2x fa-fw'></i><%= f.label :brand_men, "Label/Designer" %><button class="btn btn-default btn-xs flipper">Enter your Own</button><br><br>
+	        <%= f.text_field :brand_men, {class: 'form-control', style: 'display: none', disabled: true, placeholder: 'Add a new label/designer'} %>
+	        <%= f.select(:brand_men, options_for_select(brand_men), {:include_blank => 'Select'}, {class: 'form-control', disabled: false}) %>	        
+	      </div>
+	      <div class="form-field fatbottom" style="padding-top: 10px;">
+	        <i class="fa fa-arrow-down fa-2x fa-fw"></i><%= f.label :sizely, "SIZE.LY IMAGE (SEE BELOW!)" %><br>
+	        <%= f.text_field :sizely, {class: 'form-control', placeholder: 'Paste Size.ly Html Code Here'} %>                
+	      </div><br>	     
+	      <div class="actions">
+	          <%= f.submit "Continue", class: "btn btn-info" %>
+	      </div>	     
+	    </div>
+	  <!-- </div> -->
+	</div>
+	    <% end %> 
+	<div class="container">
+	    <i class="fa fa-arrow-down fa-3x"></i>
+	    <h2><b>Size.ly</b><h2><h4> is a wonderful, FREE service allowing you to graphically enter detailed garment measurements.</h4>
+	    <p><b>Instructions:</b></p>
+	    <ol>
+	    	<li>Click <span class="fa fa-arrow-down"></span>Toggle Size.ly Window for Measurements"</li>
+	    	<li>Select garment type</li>
+	    	<li>Enter measurements (in inches or centimeters)</li>
+	    	<li>Click "Generate Image"</li>
+	    	<li>Copy HTML CODE</li>
+	    	<li>Click "Toggle Size.ly Window" to close</li>
+	    	<li>Paste Code into "Size.ly Image"</li>
+	    </ol>
+	    <button class="btn btn-primary" id="sizely">Toggle Size.ly Window for Measurements</button>
+	    <div  id="sizely-window" style="display: none;">
+	    	<iframe src="http://size.ly/#tops" id="sizely-frame"></iframe>
+	    </div>
+	</div><br><br><br>
+	      
+
+  <div>Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>
+	</div>
+
+
+
+	     <script type="text/javascript">	     
+
+	     $.fn.toggleDisabled = function () {
+        return this.each(function () {
+            var $this = $(this);
+            if ($this.prop('disabled')) {
+                $this.prop('disabled', false).fadeIn('slow');
+            } else {
+                $this.prop('disabled', true).hide();
+            }
+        });
+    	};
+
+    	 $.fn.toggleLabel = function () {
+        return this.each(function () {
+            var $this = $(this);
+            console.log($this.text());
+            if ($this.text() === 'Enter your Own') {
+                $this.text('Select from DropDown');
+            } else {
+                $this.text('Enter your Own');
+            }
+        });
+    	};	    
+
+			  $('.flipper').click(function(e){
+			  	e.preventDefault();			  
+			  	$(this).nextAll().toggleDisabled();
+			  	$(this).toggleLabel();
+			  }); 
+
+			  $('#sizely').click(function(e) {
+			  	e.preventDefault();
+	     	$('#sizely-window').slideToggle();
+	     	$('.form-field').slideToggle();
+	     	$('.actions').toggle()
+	     });
+
+	     </script>  

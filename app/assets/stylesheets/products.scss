@@ -24,10 +24,17 @@
 
 .item-title {
 	color: black;
-	background-color: #F0F8FF;
+	background-color: #2dedc0;
 	padding: 5px;
 	border-radius: 5px;
 }
+
+// .item-category {
+// 	color: white;
+// 	background-color: #0A755A;
+// 	padding: 5px;
+// 	border-radius: 5px;
+// }
 
 .outofit {
 	display: none;
@@ -37,4 +44,22 @@
 	width: 60em;
 	height: 50em;
 	margin-bottom: 10em;
+}
+
+.flipper {
+	background-color: red;
+	float: right;
+	margin-top: 10px;
+}
+
+.link-row {
+	margin-top: 3em;
+}
+
+.photo {
+	list-style: none;
+	 display: inline-block;
+   width: 150px;
+   height: 150px;
+   margin: 8px;  
 }

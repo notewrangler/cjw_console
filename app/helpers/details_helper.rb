@@ -40,7 +40,7 @@ module DetailsHelper
 	
 
 	def clothing_color
-		[
+		[			
 			'Beige',
 			'Black',
 			'Blue',
@@ -59,8 +59,9 @@ module DetailsHelper
 			'Yellow'
 		]
 	end
-
+	# **********************************************
 	# MEN'S CLOTHING/////////////////////////////////
+	# **********************************************
 
 	def size_type_men
 		['Regular', 'Big & Tall']
@@ -68,10 +69,18 @@ module DetailsHelper
 	end
 
 	def size_men
-		[	'XL',
-			'MT',
+		[	
+			'XS',
+			'S',
+			'M',
+			'L',
+			'XL',
+			'2XL',
+			'3XL',
+			'4XL',
 			'MT',
 			'LT',
+			'XLT',
 			'2XLT',
 			'3XLT',
 			'4XLT',
@@ -86,8 +95,62 @@ module DetailsHelper
 			'Big 7X',
 			'Big 8X',
 			'Big 9X',
-			'Big 10X' ]
+			'Big 10X'
+		]
 	end	
+
+	def size_dress_shirt_men
+		[
+			'14',
+			'14 1/2',	
+			'15',	
+			'15 1/2',	
+			'16',	
+			'16 1/2',	
+			'17',	
+			'17 1/2',	
+			'18',	
+			'18 1/2',	
+			'19',	
+			'19 1/2',	
+			'20',	
+			'20 1/2',	
+			'21',	
+			'21 1/2',	
+			'22',	
+			'22 1/2',	
+			'XS',	
+			'S',	
+			'M',	
+			'L',	
+			'XL',	
+			'2XL',	
+			'3XL',	
+			'MT',	
+			'LT',	
+			'XLT',	
+			'2XLT',	
+			'3XLT',	
+			'4XLT',	
+			'5XLT',	
+			'6XLT',	
+			'Big 1X',	
+			'Big 2X',	
+			'Big 3X',	
+			'Big 4X',	
+			'Big 5X',	
+			'Big 6X',	
+			'Big 7X',	
+			'Big 8X',	
+			'Big 9X',	
+			'Big 10X'
+		]
+
+	end
+
+	def cuff_style_dress_shirt_men
+		['Standard Cuff', 'French Cuff']
+	end
 
 	def material_men
 	[
@@ -102,9 +165,10 @@ module DetailsHelper
 		'Denim',
 		'Flannel',
 		'Fleece',
-		'Fur',
+		'French Terry',
+		'Gore-Tex, Water Resistant',
 		'Hemp',
-		'Lace',
+		'Faux Leather',
 		'Leather',
 		'Linen',
 		'Linen Blend',
@@ -117,7 +181,8 @@ module DetailsHelper
 		'Rayon Blend', 
 		'Recycled Materials',
 		'Satin',
-		'100% Silk'
+		'100% Silk',
+		'Twill'
 	]
 
 	end	
@@ -137,7 +202,7 @@ module DetailsHelper
 		]
 	end	
 
-	def style_men
+	def style_men_casual_shirt
 		[
 			'Button-Front',
 			'Hawaiian',
@@ -150,7 +215,141 @@ module DetailsHelper
 		]
 	end
 
+	def style_men_pants_jeans
+		[
+			'Baggy, Loose',
+			'Boot Cut',
+			'Cargo',
+			'Carpenter',
+			'Classic, Straight Leg',
+			'Overalls',
+			'Relaxed',
+			'Slim, Skinny',
+			'Casual Pants',
+			'Corduroys',
+			'Dress - Flat Front',
+			'Dress - Pleat	',
+			'Khakis, Chinos',
+			'Overalls'
+		]
+	end
+
+	def sleeve_length_men
+		[
+		'32/33',
+		'34/35',
+		'36/37',
+		'38/39',
+		'Short Sleeve',
+		'Long Sleeve'	
+		]
+	end
+
+	def inseam_men
+		[
+		  '26',
+			'27',
+			'28',
+			'29',
+			'30',
+			'31',
+			'32',
+			'33',
+			'34',
+			'35',
+			'36',
+			'38',
+			'40',
+			'42',
+			'44'
+		]
+	end
+
+	def brand_men
+		[
+			'Handmade',
+			'191 Unlimited',
+			'3.1 Phillip Lim',
+			'5.11 Tactical',
+			'55DSL',
+			'7 For All Mankind',
+			'883 Police',
+			'a.n.a.',
+			'A.P.C.',
+			'A|S Armani Exchange',
+			'Aaron Chang',
+			'A Bathing Ape',
+			'Abercrombie & Fitch',
+			'Academy'
+		]
+	end
+
+	def bottoms_size_men
+		[
+			'XS',		
+			'S',	
+			'M',	
+			'L',	
+			'XL',	
+			'2XL',	
+			'3XL',	
+			'MT',	
+			'LT',	
+			'XLT',	
+			'2XLT',	
+			'3XLT',	
+			'4XLT',	
+			'5XLT',	
+			'6XLT',	
+			'Big 1X',	
+			'Big 2X',	
+			'Big 3X',	
+			'Big 4X',	
+			'Big 5X',	
+			'Big 6X',	
+			'Big 7X',	
+			'Big 8X',	
+			'Big 9X',	
+			'Big 10X',
+			'26',	
+			'27',	
+			'28',	
+			'29',	
+			'30',	
+			'31',	
+			'32',	
+			'33',	
+			'34',	
+			'35',	
+			'36',	
+			'37',	
+			'38',	
+			'39',	
+			'40',	
+			'42',	
+			'44',	
+			'46',	
+			'48',	
+			'50',	
+			'52',	
+			'54',	
+			'56',	
+			'58',	
+			'60',	
+			'62',	
+			'64',	
+			'66',	
+			'68',	
+			'70',	
+			'72'	
+		]
+	end
+
+	
+
+	# **********************************************
 	# WOMEN'S CLOTHING//////////////////////////////
+	# **********************************************
 
 	def size_type_women
 		[ 'Plus',

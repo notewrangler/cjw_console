@@ -14,7 +14,8 @@
 		  	<% end %>
 
 				<div class="fatbottom">
-					<h4 style="color: gray">Item: <span class="item-title"><%= @product.title %></span> -- Listing Specifics</h4> 					
+					<h4 style="color: gray">Item: <span class="item-title"><%= @product.title %></span> -- Create Listing</h4> 
+					<h4 style="color: gray">Store Category: <b style="color: #444041"><%= @product.store_category %></b></h4> 					
 				</div>
 				<div class="form-field fatbottom">
        	 <i class='fa fa-pencil fa-2x fa-fw'></i><%= f.label :listing_title, "Full Listing Title" %><br>

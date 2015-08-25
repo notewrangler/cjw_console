@@ -17,9 +17,10 @@
 		  <div class="col-md-4">
       
 		  <div class="form-field fatbottom">
-           <i class='small material-icons prefix'>camera_alt</i><%= f.label :image, "Upload Photo" %><br>
+           <i class='small material-icons prefix'>camera_alt</i><%= f.label :image, "Upload Photo From File" %><br>
            <%= f.file_field :image, class: 'form-control' %>
-        </div>	
+      </div>	
+        
 		  <div class="actions">
             <%= f.submit "Submit", class: "btn btn-success"  %>
         </div>	
